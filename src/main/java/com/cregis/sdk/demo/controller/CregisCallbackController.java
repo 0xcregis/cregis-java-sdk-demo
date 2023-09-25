@@ -28,7 +28,7 @@ public class CregisCallbackController {
      * @return 结果
      */
     @PostMapping("/address/deposit/callback")
-    public String callback2(@RequestBody AddressDepositCallback addressDepositCallback) {
+    public String addressDepositCallback(@RequestBody AddressDepositCallback addressDepositCallback) {
         log.info("地址充值回调:{}", addressDepositCallback);
         if (SignUtil.verifySign(BeanUtil.beanToMap(addressDepositCallback), cregisProps.getApiKey(), addressDepositCallback.getSign())) {
             log.info("验签成功");
@@ -42,7 +42,7 @@ public class CregisCallbackController {
      * @return 结果
      */
     @PostMapping("/withdraw/callback")
-    public String callback3(@RequestBody PayoutCallback payoutCallback) {
+    public String payoutCallback(@RequestBody PayoutCallback payoutCallback) {
         log.info("提币回调:{}", payoutCallback);
         if (SignUtil.verifySign(BeanUtil.beanToMap(payoutCallback), cregisProps.getApiKey(), payoutCallback.getSign())) {
             log.info("验签成功");
