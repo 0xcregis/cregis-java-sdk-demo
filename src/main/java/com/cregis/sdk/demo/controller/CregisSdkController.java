@@ -21,23 +21,23 @@ public class CregisSdkController {
      * 生成充值地址
      */
     @GetMapping("/address-create")
-    public Result<?> addressCreate(String mainCoinType, String callbackUrl, String alias) {
-        return cregisClient.addressCreate(mainCoinType, callbackUrl, alias);
+    public Result<?> addressCreate(String chainId, String callbackUrl, String alias) {
+        return cregisClient.addressCreate(chainId, callbackUrl, alias);
     }
     /**
      * 检测地址合法性
      */
     @GetMapping("/address-legal")
-    public Result<?> isLegalAddress(String mainCoinType, String address) {
-        return cregisClient.addressLegal(mainCoinType, address);
+    public Result<?> isLegalAddress(String chainId, String address) {
+        return cregisClient.addressLegal(chainId, address);
     }
 
     /**
      * 检测地址在项目中是否存在
      */
     @GetMapping("/address-inner")
-    public Result<?> addressInner(String mainCoinType, String address) {
-        return cregisClient.addressInner(mainCoinType, address);
+    public Result<?> addressInner(String chainId, String address) {
+        return cregisClient.addressInner(chainId, address);
     }
 
     /**
